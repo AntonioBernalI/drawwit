@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+
 export const Header = styled(motion.div)`
     height: 10%;
     width: 100%;

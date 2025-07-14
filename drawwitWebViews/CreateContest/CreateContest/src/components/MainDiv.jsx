@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
 const MainDiv = styled(motion.div)`
     height: 100%;
     width: 100%;

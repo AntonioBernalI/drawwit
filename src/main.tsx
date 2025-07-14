@@ -1,4 +1,4 @@
-import { Devvit, useState, svg } from '@devvit/public-api';
+import {Devvit, useState, svg, useWebView} from '@devvit/public-api';
 import HomeScreen from "./components/HomeScreen.jsx";
 Devvit.configure({
   redditAPI: true,
@@ -34,8 +34,12 @@ Devvit.addCustomPostType({
   height: 'regular',
   render: (context) => {
     const [counter, setCounter] = useState(0);
+    const mount = useWebView({
+      url:"index.html",
+      onMessage:()=>{}
+    }).mount
     return (
-        <HomeScreen/>
+        <HomeScreen mount={mount}/>
     )
   },
 });

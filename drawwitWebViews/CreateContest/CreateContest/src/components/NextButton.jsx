@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+
 export const NextButtonContainer = styled(motion.div)`
     height: 20%;
     width: 100%;

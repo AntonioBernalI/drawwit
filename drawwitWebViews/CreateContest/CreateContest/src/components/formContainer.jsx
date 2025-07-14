@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+
 export const FormContainer = styled(motion.div)`
     height: 70%;
     width: 100%;
