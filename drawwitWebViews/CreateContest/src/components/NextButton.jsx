@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 
 
 export const NextButtonContainer = styled(motion.div)`
@@ -18,5 +18,10 @@ export const NextButton = styled(motion.div)`
     background-color: white;
     border-radius: 15px;
     border: 5px solid black;
+    @media (max-height: 600px) {
+        margin-top: 60px;
+        height: 100px;
+        width: 390px;
+    }
 `
 

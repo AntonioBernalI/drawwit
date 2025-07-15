@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 import GloriaHallelujahTTF from '../assets/GloriaHallelujah-Regular.ttf';
 
 const GlobalStyles = createGlobalStyle`

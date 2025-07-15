@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 
 
 export const FormContainer = styled(motion.div)`
@@ -14,12 +14,18 @@ export const FormContainer = styled(motion.div)`
 `
 export const Form = styled(motion.div)`
     width: 80%;
-    height: 80%;
+    height: 100%;
     background-color: white;
     border-radius: 30px;
     border: 5px solid black;
     @media (max-width: 768px) {
-        height: 60%;
+        height: 80%;
+    }
+    @media (max-height: 900px) {
+        height: 115%;
+    }
+    @media (min-height: 901px) {
+        height: 70%;
     }
 `
 export const QuestionContainer = styled(motion.div)`

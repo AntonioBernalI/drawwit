@@ -1,6 +1,8 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
+
 const MainDiv = styled(motion.div)`
+    position: relative;
     height: 100%;
     width: 100%;
     background-color: #f0f0f0;
