@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 
-export const AlertBackdrop = styled(motion.div)`
+export const CouncilBackdrop = styled(motion.div)`
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -15,14 +15,14 @@ export const AlertBackdrop = styled(motion.div)`
     align-items: center;
     justify-content: center;
 `
-export const AlertContainer = styled.div`
+export const CouncilContainer = styled.div`
     width: 75%;
     height: 75%;
     background-color: white;
     border-radius: 20px;
     border: 5px solid black;
     @media (max-width: 768px) {
-        height: 30%;
+        height: 60%;
         width: 90%;
     }
     @media (max-height: 600px) {
@@ -30,34 +30,46 @@ export const AlertContainer = styled.div`
         width: 90%;
     }
 `
-export const Alert = styled.div`
+export const Council = styled.div`
     width: 100%;
     height: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-bottom: 5px solid black;
+    @media (max-width: 720px) {
+        height: 80%;
+    }
 `
-export const AlertString = styled.div`
+export const CouncilString = styled.div`
     height: 100%;
     width: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 50px;
-    line-height: 50px;
     text-align: center;
-    @media (max-width: 768px) {
-        width: 65%;
-        font-size: 35px;
+    line-height: 90px;
+    @media (max-width: 720px) {
+        width: 85%;
+        font-size: 30px;
+        line-height: 50px;
+    }
+    @media (max-height: 600px) {
+        width: 90%;
+        font-size: 30px;
+        line-height: 50px;
     }
 `
-export const ButtonContainer = styled.div`
+export const CouncilButtonContainer = styled.div`
     width: 100%;
     height: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 720px) {
+        height: 20%;
+    }
 `
 export const OkButton = styled.div`
     width: 50%;
@@ -69,7 +81,11 @@ export const OkButton = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 100px;
-    @media (max-width: 768px) {
+    @media (max-width: 720px) {
+        font-size: 50px;
+        height: 70%;
+    }
+    @media (max-height: 600px) {
         font-size: 50px;
     }
     user-select: none;

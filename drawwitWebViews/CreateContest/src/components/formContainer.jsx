@@ -42,6 +42,7 @@ export const Question = styled(motion.div)`
     align-items: center;
     justify-content: center;
     font-size: 50px;
+    line-height: 50px;
     text-align: center;
     font-family: "Gloria Hallelujah", sans-serif;
     @media (max-width: 768px) {
@@ -70,5 +71,7 @@ export const Input = styled.input`
         font-size: 30px;
     }
 `
+
+
 
 
