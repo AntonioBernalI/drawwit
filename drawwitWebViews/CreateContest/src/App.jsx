@@ -10,6 +10,7 @@ import {
     ButtonContainer,
     OkButton
 } from "./components/Alert.jsx";
+import MainDiv from "./components/MainDiv.jsx";
 
 function App() {
     const [screen, setScreen] = useState("Theme");
@@ -24,12 +25,16 @@ function App() {
         switch (screen) {
             case "Theme":
                 setScreen("Duration");
+                break;
+            case "Duration":
+                setScreen("People");
+                break;
         }
     };
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            if (event.key === 'Enter' && screen === "Theme") {
+            if (event.key === 'Enter') {
                 event.preventDefault();
                 handleNext();
             }
@@ -42,7 +47,7 @@ function App() {
 
     return (
         <>
-            {/* ALERTA SEPARADA */}
+            {/* Alert */}
             <AnimatePresence>
                 {showAlert && (
                     <AlertBackdrop
@@ -63,7 +68,7 @@ function App() {
                 )}
             </AnimatePresence>
 
-            {/* CONTENIDO PRINCIPAL */}
+            {/* Main Content */}
             <AnimatePresence mode={"wait"}>
                 {screen === "Theme" && (
                     <ThemePrompt
@@ -73,8 +78,16 @@ function App() {
                         onNext={handleNext}
                     />
                 )}
-                {screen === "Duration" && (
-                    <DurationPrompt key="duration"/>
+                <AnimatePresence mode={"wait"}>
+                    {screen === "Duration" && (
+                        <DurationPrompt
+                            onNext={handleNext}
+                        />
+                    )}
+                </AnimatePresence>
+                {screen === "People" && (
+                    <MainDiv>
+                    </MainDiv>
                 )}
             </AnimatePresence>
         </>
