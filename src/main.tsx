@@ -4,7 +4,6 @@ Devvit.configure({
   redditAPI: true,
 });
 
-// Add a menu item to the subreddit menu for instantiating the new experience post
 Devvit.addMenuItem({
   label: 'Add Screen',
   location: 'subreddit',
