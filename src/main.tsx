@@ -16,7 +16,6 @@ Devvit.addMenuItem({
     const post = await reddit.submitPost({
       title: 'Welcome to drawwit!',
       subredditName: subreddit.name,
-      // The preview appears while the post loads
       preview: (
         <vstack height="100%" width="100%" alignment="middle center">
           <text size="large">Loading ...</text>
@@ -27,7 +26,6 @@ Devvit.addMenuItem({
   },
 });
 
-// Add a post type definition
 Devvit.addCustomPostType({
   name: 'drawwit',
   height: 'regular',

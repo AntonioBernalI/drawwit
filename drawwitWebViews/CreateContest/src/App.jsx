@@ -16,12 +16,29 @@ function App() {
     const [screen, setScreen] = useState("Theme");
     const [theme, setTheme] = useState("");
     const [showAlert, setShowAlert] = useState(false);
-
+    const [alertMessage, setAlertMessage] = useState("");
+    const [duration, setDuration] = useState({});
     const handleNext = () => {
+        const totalMinutes = (duration.days * 1440) + (duration.hours * 60) + duration.minutes;
+
         if (theme.trim() === "") {
+            setAlertMessage("Please make sure to fill out the form.")
             setShowAlert(true);
             return;
         }
+
+        if ((Object.keys(duration).length === 0 && screen === "Duration") || (totalMinutes < 30 && screen === "Duration")) {
+            setAlertMessage("The contests must last at least 30 minutes.");
+            setShowAlert(true);
+            return;
+        }
+
+        if (totalMinutes >= 131500 && screen === "Duration") {
+            setAlertMessage("Contests must be under three months long.");
+            setShowAlert(true);
+            return;
+        }
+
         switch (screen) {
             case "Theme":
                 setScreen("Duration");
@@ -44,7 +61,9 @@ function App() {
             window.removeEventListener('keydown', handleKeyDown);
         };
     }, [screen, theme]);
-
+    useEffect(() => {
+        console.log(duration)
+    },[duration])
     return (
         <>
             {/* Alert */}
@@ -58,7 +77,7 @@ function App() {
                     >
                         <AlertContainer>
                             <Alert>
-                                <AlertString>Please make sure to fill out the form.</AlertString>
+                                <AlertString>{alertMessage}</AlertString>
                             </Alert>
                             <ButtonContainer>
                                 <OkButton onClick={() => setShowAlert(false)}>Ok</OkButton>
@@ -82,6 +101,41 @@ function App() {
                     {screen === "Duration" && (
                         <DurationPrompt
                             onNext={handleNext}
+                            onFirst={()=>{
+                                setDuration({
+                                    days: 0,
+                                    hours: 12,
+                                    minutes: 0,
+                                })
+                            }}
+                            onSecond={()=>{
+                                setDuration({
+                                    days: 1,
+                                    hours: 0,
+                                    minutes: 0,
+                                })
+                            }}
+                            onThird={()=>{
+                                setDuration({
+                                    days: 2,
+                                    hours: 0,
+                                    minutes: 0,
+                                })
+                            }}
+                            onFourth={()=>{
+                                setDuration({
+                                    days: 7,
+                                    hours: 0,
+                                    minutes: 0,
+                                })
+                            }}
+                            onCustom={(customDuration)=>{
+                                setDuration({
+                                    days: customDuration.days,
+                                    hours: customDuration.hours,
+                                    minutes: customDuration.minutes,
+                                })
+                            }}
                         />
                     )}
                 </AnimatePresence>

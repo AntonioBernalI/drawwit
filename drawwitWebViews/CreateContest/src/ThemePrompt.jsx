@@ -31,7 +31,7 @@ export default function ThemePrompt({value, onChange, onNext}) {
                         <Question>What is the theme of your contest?</Question>
                     </QuestionContainer>
                     <InputContainer>
-                        <Input value={value} onChange={onChange} />
+                        <Input value={value} onChange={onChange} autoFocus={true} />
                     </InputContainer>
                 </Form>
             </FormContainer>

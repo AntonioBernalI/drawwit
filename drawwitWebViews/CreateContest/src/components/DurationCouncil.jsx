@@ -50,7 +50,7 @@ export const CouncilString = styled.div`
     font-size: 50px;
     text-align: center;
     line-height: 90px;
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
         width: 85%;
         font-size: 30px;
         line-height: 50px;

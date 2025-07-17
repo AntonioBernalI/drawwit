@@ -52,18 +52,27 @@ export const DurationOptions = styled.div`
     background-color: white;
     border-radius: 20px;
 `
-export const CustomDuration = styled.div`
-    height: 50%;
+export const CustomDuration = styled(motion.div)`
+    height: 55%;
     width: 80%;
     background-color: white;
     border-radius: 20px;
     border: 5px solid black;
     @media (max-width: 720px) {
         height: 90%;
+        width: 90%;
+    }
+    @media (max-height: 1000px ) and (max-width: 720px){
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 20%;
+        left: 0%;
+        height: 50vh;
+        width: 100vw;
     }
     @media (max-height: 600px) {
-        height: 60%;
-        width: 90%;
+        height: 70%;
+        width: 95%;
     }
 `
 export const QuestionContainer = styled.div`
@@ -166,4 +175,70 @@ export const StringContainer = styled.div`
         font-size: 35px;
     }
     user-select: none;
+`
+export const PromptContainer = styled.div`
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+export const Prompt = styled.div`
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    user-select: none;
+    @media (max-height: 600px) {
+        font-size: 25px;
+    }
+    @media (max-width: 720px) {
+        font-size: 30px;
+    }
+`
+export const DurationContainer = styled.div`
+    width: 100%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+`
+export const DurationArea = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+export const TimeInput = styled.input`
+    width: 90%;
+    height: 70%;
+    background-color: white;
+    border-radius: 20px;
+    border: 5px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    text-align: center;
+    font-family: Gloria Hallelujah, sans-serif;
+    -webkit-appearance: none;
+    @media (max-width: 720px) {
+        height: 50%;
+    }
+`
+export const Label = styled.div`
+    width: 90%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    @media (max-height: 600px) {
+        font-size: 25px;
+    }
+    @media (max-width: 720px) {
+        font-size: 30px;
+    }
 `

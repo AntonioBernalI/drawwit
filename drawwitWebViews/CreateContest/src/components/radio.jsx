@@ -28,7 +28,6 @@ const Radio = ({height , width , marginLeft, active, onClick}) => {
             justifyContent:'center',
             height:height,
             width:width,
-            backgroundColor:'white',
             margin:marginLeft,
         }}>
             <BigCircle
