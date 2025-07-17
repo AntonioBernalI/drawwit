@@ -17,7 +17,11 @@ function App() {
     const [theme, setTheme] = useState("");
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
-    const [duration, setDuration] = useState({});
+    const [duration, setDuration] = useState({
+        days:0,
+        hours:0,
+        minutes:0
+    });
     const handleNext = () => {
         const totalMinutes = (duration.days * 1440) + (duration.hours * 60) + duration.minutes;
 
@@ -27,7 +31,7 @@ function App() {
             return;
         }
 
-        if ((Object.keys(duration).length === 0 && screen === "Duration") || (totalMinutes < 30 && screen === "Duration")) {
+        if (totalMinutes < 30 && screen === "Duration") {
             setAlertMessage("The contests must last at least 30 minutes.");
             setShowAlert(true);
             return;
@@ -44,7 +48,7 @@ function App() {
                 setScreen("Duration");
                 break;
             case "Duration":
-                setScreen("People");
+                setScreen("Canvas");
                 break;
         }
     };
@@ -60,7 +64,7 @@ function App() {
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [screen, theme]);
+    }, [screen, theme, duration]);
     useEffect(() => {
         console.log(duration)
     },[duration])
@@ -139,7 +143,7 @@ function App() {
                         />
                     )}
                 </AnimatePresence>
-                {screen === "People" && (
+                {screen === "Canvas" && (
                     <MainDiv>
                     </MainDiv>
                 )}
